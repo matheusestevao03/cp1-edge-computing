@@ -19,17 +19,17 @@ Acendimento do LED vermelho e da buzina se a luminosidade estiver baixa.
 Hardware:
 
 
-Arduino Uno
+Arduino Uno,
 
-Sensor LDR
+Sensor LDR,
 
-3 LEDs (verde, amarelo, vermelho)
+3 LEDs (verde, amarelo, vermelho),
 
-Buzzer
+Buzzer,
 
-Resistores
+Resistores,
 
-Cabos jumper
+Cabos jumper,
 
 
 Software:
@@ -39,6 +39,7 @@ IDE do Arduino
 Instruções de montagem:
 
 Conecte o sensor LDR ao Arduino Uno na porta analógica A0.
+
 Conecte os LEDs (verde, amarelo, vermelho) e a buzina ao Arduino Uno nas portas digitais indicadas.
 
 Compile e carregue o código fonte na IDE do Arduino.
