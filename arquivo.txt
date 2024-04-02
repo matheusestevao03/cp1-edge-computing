@@ -1,0 +1,55 @@
+//Identificando as portas
+int ledVerde = 4;
+int ledAmarelo = 3;
+int ledVermelho = 2;
+int buzina = 5;
+int LDR = A0;
+int analogValue = 0;
+
+//Configurando as portas
+void setup() {
+  pinMode(ledVerde,OUTPUT);
+  pinMode(ledAmarelo,OUTPUT);
+  pinMode(ledVermelho,OUTPUT);
+  pinMode(buzina,OUTPUT);
+  
+  Serial.begin(9600);
+}
+
+
+
+//Verificando o nível da luminosidade
+void loop(){
+  
+  analogValue = analogRead(LDR);	//Leitura do LDR
+  int i = map(analogValue, 0, 1023, 0, 100);
+  
+  Serial.println(i);
+  
+  if(analogValue < 100){	//Iluminação OK
+    digitalWrite(ledVerde, HIGH);
+  }
+  else if(analogValue >= 100 && analogValue <= 200){	//Iluminação em níveis de alerta
+    digitalWrite(ledAmarelo, HIGH);
+  }
+  else{		//Indicando que há um problema
+    digitalWrite(ledVermelho, HIGH);
+    digitalWrite(buzina, LOW);
+  }
+  
+  
+  
+  delay(3000);
+  digitalWrite(ledVerde, LOW);
+  digitalWrite(ledAmarelo, LOW);
+  digitalWrite(ledVermelho, LOW);
+  digitalWrite(buzina, HIGH);
+}
+// Função para calcular a média de um array de valores
+float media(int valores[], int tamanho) {
+  float soma = 0;
+  for (int i = 0; i < tamanho; i++) {
+    soma += valores[i];
+  }
+  return soma / tamanho;
+}
