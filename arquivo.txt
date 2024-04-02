@@ -36,7 +36,11 @@ void loop(){
     digitalWrite(ledVermelho, HIGH);
     digitalWrite(buzina, LOW);
   }
-  
+
+
+
+
+
   
   
   delay(3000);
